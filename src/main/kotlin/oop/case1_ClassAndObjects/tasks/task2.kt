@@ -1,4 +1,4 @@
-package org.example.oop.case1_ClassAndObjects.tasks
+
 
 /*
 
@@ -11,6 +11,72 @@ package org.example.oop.case1_ClassAndObjects.tasks
     findBooksByAuthor(author: String) — возвращает список книг указанного автора.
 
  */
+fun main() {
+
+
+    val book = Book(
+        title = "Гадри фор макалик",
+        author = "Ганцен бурш",
+        yearPublished = 2018
+    )
+
+    val book2 = Book(
+        title = "Убить пересмешника",
+        author = "Харпер ли",
+        yearPublished = 1960
+    )
+    val book3 = Book(
+        title = "Съесть прапрапрапрапрапрапрапрапрапрапрапрапрапрапрадеда",
+        author = "Хамстер криминал",
+        yearPublished = 2024
+    )
+    val book4 = Book(
+        title = "Риторика бога",
+        author = "Цио ньо",
+        yearPublished = 1287
+    )
+    val book5 = Book(
+        title = "Битва за Барнаул",
+        author = "Ганцен бурш",
+        yearPublished = 2001
+    )
+    val library = Library()
+    library.addBook(book)
+    library.addBook(book2)
+    library.addBook(book3)
+    library.addBook(book4)
+    library.addBook(book5)
+    library.listBooks()
+    library.findBooksByAuthor()
+}
+class Library() {
+    val books = mutableListOf<Book>()
+
+    fun addBook(book: Book) {
+        books.add(book)
+    }
+}
+    class Book(
+        val title: String,
+        val author: String,
+        val yearPublished: Int
+    )
+fun listBooks() {
+    books.forEach() { book ->
+        println("Название: ${book.title}")
+        println("Автор: ${book.author}")
+        println("Год выпуска: ${book.yearPublished}")
+    }
+}
+fun findBooksByAuthor(author: String ){
+    books.forEach { book ->
+        if (book.author == author){
+            println("Название: ${book.title}")
+            println("Автор: ${book.author}")
+            println("Год выпуска: ${book.yearPublished}")
+        }
+    }
+}
 
 // Класс, представляющий книгу
 class Book(val title: String, val author: String, val yearPublished: Int) {

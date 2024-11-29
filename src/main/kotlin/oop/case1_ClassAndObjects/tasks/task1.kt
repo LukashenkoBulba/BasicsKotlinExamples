@@ -1,5 +1,7 @@
 package org.example.oop.case1_ClassAndObjects.tasks
 
+import java.time.Year
+
 /*
 
     Создайте класс Car с полями brand (марка), model (модель) и year (год выпуска). Напишите функции:
@@ -9,6 +11,15 @@ package org.example.oop.case1_ClassAndObjects.tasks
     isVintage() — возвращает true, если автомобилю более 25 лет, иначе — false.
 
  */
+class Car(
+    var brand: String = "BMW",
+    var model: String = "SX5",
+    var year: Int = 2013
+)
+fun startEngine(){
+    println("Двигатель заработал")
+}
+
 
 // Класс, представляющий автомобиль
 class Car(val brand: String, val model: String, val year: Int) {
